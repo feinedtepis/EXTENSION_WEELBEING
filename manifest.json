@@ -1,0 +1,28 @@
+
+{
+  "manifest_version": 3,
+  "name": "Digital Wellbeing",
+  "version": "1.0.0",
+  "description": "Track time spent on websites in Firefox",
+
+  "permissions": [
+    "tabs",
+    "storage",
+    "idle"
+  ],
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Digital Wellbeing"
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "digital-wellbeing@example.com"
+    }
+  }
+}

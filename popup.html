@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Digital Wellbeing</title>
+
+    <style>
+        body {
+            width: 320px;
+            padding: 20px;
+            margin: 0;
+            background: #111827;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .total {
+            background: #1f2937;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .total h1 {
+            color: #818cf8;
+            margin-bottom: 0;
+        }
+
+        .tab {
+            background: #1f2937;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .tab-name {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .bar {
+            height: 7px;
+            background: #374151;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: #818cf8;
+            width: 0%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Digital Wellbeing</h2>
+
+    <div class="total">
+        <p>Total Browsing Time</p>
+        <h1 id="total-time">0m</h1>
+    </div>
+
+    <h3>Tab Usage</h3>
+
+    <div id="tab-list">
+        <p>No usage recorded yet.</p>
+    </div>
+
+    <script src="popup.js"></script>
+
+</body>
+</html>
