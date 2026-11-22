@@ -1,83 +1,153 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Digital Wellbeing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            width: 320px;
-            padding: 20px;
+            width: 340px;
             margin: 0;
-            background: #111827;
-            color: white;
-            font-family: Arial, sans-serif;
+            padding: 18px;
+            background: #0b0f19;
+            color: #f8fafc;
+            font-family: "Plus Jakarta Sans", sans-serif;
         }
 
-        h2 {
-            text-align: center;
-            margin-top: 0;
-        }
-
-        .total {
-            background: #1f2937;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .total h1 {
-            color: #818cf8;
-            margin-bottom: 0;
-        }
-
-        .tab {
-            background: #1f2937;
-            padding: 12px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-        }
-
-        .tab-name {
+        .top-bar {
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            font-size: 14px;
-            margin-bottom: 8px;
+            margin-bottom: 14px;
         }
 
-        .bar {
-            height: 7px;
-            background: #374151;
-            border-radius: 5px;
+        .title {
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #f1f5f9;
+        }
+
+        .nav-group {
+            display: flex;
+            gap: 6px;
+        }
+
+        .nav-btn {
+            background: #1e293b;
+            color: #cbd5e1;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+        }
+
+        .nav-btn:hover {
+            background: #334155;
+            color: #ffffff;
+            border-color: #6366f1;
+        }
+
+        .card {
+            background: #131a2a;
+            border: 1px solid #1e293b;
+            border-radius: 14px;
+            padding: 16px 14px 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            width: 100%;
+            min-height: 220px;
+        }
+
+        .day-header {
+            font-size: 12px;
+            font-weight: 600;
+            color: #94a3b8;
+            background: #1e293b;
+            padding: 4px 12px;
+            border-radius: 999px;
+            margin-bottom: 14px;
+        }
+
+        .day-total {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 20px;
+            font-weight: 600;
+            color: #818cf8;
+            margin-bottom: 14px;
+        }
+
+        .bar-body {
+            width: 18px;
+            min-height: 4px;
+            border-radius: 999px;
+            background: linear-gradient(180deg, #38bdf8 0%, #6366f1 100%);
+            box-shadow: 0 0 12px rgba(99, 102, 241, 0.35);
+            transition: height 0.35s ease, filter 0.2s ease;
+        }
+
+        .bar-body:hover {
+            filter: brightness(1.2);
+        }
+
+        .bar-time {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 10px;
+            font-weight: 500;
+            color: #e2e8f0;
+        }
+
+        .bar-site {
+            font-size: 10px;
+            color: #94a3b8;
+            max-width: 48px;
             overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .bars-row {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE/Edge */
         }
 
-        .progress {
-            height: 100%;
-            background: #818cf8;
-            width: 0%;
+        .bars-row::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
         }
     </style>
 </head>
-
 <body>
 
-    <h2>Digital Wellbeing</h2>
-
-    <div class="total">
-        <p>Total Browsing Time</p>
-        <h1 id="total-time">0m</h1>
+    <div class="top-bar">
+        <div class="title">Digital Wellbeing</div>
+        <div class="nav-group">
+            <button class="nav-btn back" title="Previous day">&#8592;</button>
+            <button class="nav-btn ahead" title="Next day">&#8594;</button>
+        </div>
     </div>
 
-    <h3>Tab Usage</h3>
-
-    <div id="tab-list">
-        <p>No usage recorded yet.</p>
+    <div class="card">
+        <div class="container"></div>
     </div>
 
     <script src="popup.js"></script>
-
 </body>
 </html>
