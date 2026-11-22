@@ -65,3 +65,5 @@ Project Structure
 Privacy
 
 All browsing data stays strictly on your device inside Firefox's local extension storage (browser.storage.local). Nothing is collected, logged externally, or transmitted over the network.
+<img width="1867" height="976" alt="image" src="https://github.com/user-attachments/assets/f4b022e6-6532-4bc0-b5c7-b57d750b7ae6" />
+
